@@ -9,6 +9,8 @@ public class Hello { // 클래스 선언: 클래스 이름은 대문자로 시�
 		// 콘솔에 출력하는 실행문
 		System.out.println("Hello, Java");
 		// 저장을 누를 때 마다 자동으로 컴파일 됨. (만약 에러가 있으면 빨간줄 발생!)
+		
+		System.out.println("두번째 커밋 확인");
 	}
 
 	
