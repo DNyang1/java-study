@@ -8,6 +8,6 @@ public class RunStatementExample {
 		int result = x + y;
 		System.out.println(result);
 		
-		// 메세지 연습용 commit 할거
+		// 메세지 연습용 commit 할거asd
 	}
 }
