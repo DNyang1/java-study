@@ -14,6 +14,6 @@ public class EscapeExample {
 		System.out.println("봄 \\ 여름 \\ 가을 \\ 겨울");
 		System.out.println("  /\\___/\\");
 		System.out.println(" /       \\");
-		System.out.println(" |       ");
+		System.out.println(" |       |");
 	}
 }
