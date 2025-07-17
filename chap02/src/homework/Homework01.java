@@ -20,10 +20,8 @@ public class Homework01 {
 		System.out.println("BMI 계산 프로그램");
 		System.out.print("몸무게를 입력해주세요 (단위 kg)");
 		weight = sc.nextDouble();
-		sc.nextLine(); // 버퍼 비우기
-		System.out.println("키를 입력해주세요 (단위 m)");
+		System.out.print("키를 입력해주세요 (단위 m)");
 		height = sc.nextDouble();
-		sc.nextLine(); // 버퍼 비우기
 		double bmi = weight / (height * height);
 		System.out.println("몸무게(kg):" + weight);
 		System.out.printf("키(m): %.2f\n" , height);
