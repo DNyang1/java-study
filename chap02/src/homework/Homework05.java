@@ -23,9 +23,9 @@ public class Homework05 {
 		System.out.printf("수학: ");
 		double mat = sc.nextDouble();
 		double total = kor + eng + mat;
-		double aver = total / 3;
+		double avg = total / 3;
 		System.out.println("총점:" + (int)total);
-		System.out.println("평균:" + (int)aver);
+		System.out.println("평균:" + (int)avg);
 	}
 
 }

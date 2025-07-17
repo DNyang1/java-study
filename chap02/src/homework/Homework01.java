@@ -17,12 +17,15 @@ public class Homework01 {
 		Scanner sc = new Scanner(System.in);
 		double weight;
 		double height;
+		
 		System.out.println("BMI 계산 프로그램");
 		System.out.print("몸무게를 입력해주세요 (단위 kg)");
 		weight = sc.nextDouble();
 		System.out.print("키를 입력해주세요 (단위 m)");
 		height = sc.nextDouble();
+		
 		double bmi = weight / (height * height);
+		
 		System.out.println("몸무게(kg):" + weight);
 		System.out.printf("키(m): %.2f\n" , height);
 		System.out.printf("BMI 지수: %.1f", bmi);
