@@ -52,5 +52,8 @@ public class Homework02 {
 		} else
 			System.out.println("해당하는 계절이 없어용");
 
+		// Early Return Pattern
+		// 에러나 예외 조건을 먼저 검사하고 처리한 다음, 성공 케이스는 마지막에 처리
+		// 장점ㅣ 1) 코드의 가독성이 좋아짐, 2) 코드의 중첩을 줄일 수 있음
 	}
 }

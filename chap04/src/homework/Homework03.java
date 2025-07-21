@@ -25,9 +25,9 @@ public class Homework03 {
 		
 		System.out.print("첫번째 정수: ");
 		int num1 = sc.nextInt();
-		System.out.print("첫번째 정수: ");
+		System.out.print("두번째 정수: ");
 		int num2 = sc.nextInt();
-		System.out.print("첫번째 정수: ");
+		System.out.print("세번째 정수: ");
 		int num3 = sc.nextInt();
 
 		if (num1 < num2) {

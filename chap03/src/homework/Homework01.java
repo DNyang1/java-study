@@ -21,6 +21,10 @@ public class Homework01 {
 		System.out.print("말해보시오:");
 		String say = sc.nextLine();
 		
+		// 삼항 (조건) 연산자 이용
+		// 변수 쪽에 equals()을 호출하면 input이 null 일경우 예외 가 발생한다
+		// 리터럴이나 상수를 앞에 두면, 인풋이 널 이여도 안전하게 비교가능
+		
 		String parrot = (say == "간다") ? "온다" : "간다"; 
 		System.out.println("앵무새:" + parrot);
 		
