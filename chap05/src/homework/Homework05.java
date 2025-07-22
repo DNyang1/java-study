@@ -7,6 +7,7 @@ public class Homework05 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String[] choices = {"가위", "바위", "보"};
+        boolean game = true;
         int draw = 0;
         int win = 0;
         int lose = 0;
@@ -26,7 +27,7 @@ public class Homework05 {
                 win = 0;
                 lose = 0;
                 count = 0;
-                System.exit(0);
+                game = false;
             } else{
                 System.out.println("잘못 입력하셨습니다.");
                 continue;
