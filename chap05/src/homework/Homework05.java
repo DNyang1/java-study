@@ -29,6 +29,7 @@ public class Homework05 {
                 lose = 0;
                 count = 0;
                 game = false;
+                break;
             } else{
                 System.out.println("잘못 입력하셨습니다.");
                 continue;
