@@ -6,6 +6,8 @@ import homework.model.vo.Person;
 public class Run {
 
 	public static void main(String[] args) {
+		
+		// 필드 과제
 		Employee em1 = new Employee();
 		em1.name = "김철수";
 		em1.team = "교육운영팀";
@@ -31,6 +33,6 @@ public class Run {
 		
 		System.out.println(p1.phoneNumber + " " + p1.height + " " + p1.weight);
 		System.out.println(p2.phoneNumber + " " + p2.height + " " + p2.weight);
-		
+
 	}
 }
