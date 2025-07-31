@@ -30,7 +30,10 @@ public class Quiz1 {
 				sum += (ch - '0');
 		}
 		System.out.println(sum);
-
+		
+		
 	}
 
+	
+	
 }
