@@ -1,0 +1,19 @@
+package sec01.exam06;
+
+public class SmartPhone {
+	private String company;
+	private String os;
+	
+	public SmartPhone(String company, String os) {
+		this.company = company;
+		this.os = os;
+	}
+
+	// 의미있는 정보를 리턴하기 위해 재정의함
+	@Override
+	public String toString() {
+		return "SmartPhone [company=" + company + ", os=" + os + "]";
+	}
+
+
+}
