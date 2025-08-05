@@ -21,6 +21,7 @@ public void mainMenu(){
 		System.out.println("5. 도서 오름차순 정렬");
 		System.out.println("9. 종료");
 		int select = sc.nextInt();
+		sc.nextLine();
 		
 		switch (select) {
 		case 1: insertBook(); break;
@@ -41,12 +42,33 @@ public void mainMenu(){
 	// 1. 새 도서 추가 view 메소드
 public void insertBook(){
     // 1. 도서명(String title) 입력 받기
-    // 2. 저자명(String author) 입력 받기
-    // 3. 장르(int category) 입력 받기
+	System.out.print("도서명: ");
+	String title = sc.nextLine();
+	
+	// 2. 저자명(String author) 입력 받기
+	System.out.print("저자명: ");
+	String author = sc.nextLine();
+
+	// 3. 장르(int category) 입력 받기
+	System.out.print("장르: ");
+	int category = sc.nextInt();
+	sc.nextLine();
+
     // 4. 가격(int price) 입력 받기
+	System.out.print("가격 ");
+	int price = sc.nextInt();
+	sc.nextLine();
+	
     // 5. 매개변수 생성자를 이용하여 Book 객체 생성
     // 장르명 입력은 숫자로 받지만 객체 생성할때는 문자열로 넘기기
     // (1:인문 / 2:자연과학 / 3:어린이 / 그 외:기타)
+	switch (category) {
+	case 1:		break;
+
+	default:
+		break;
+	}
+	Book addBook = new Book();
     // 6. BookController의 insert로 Book 객체 전달
 }
 	// 2. 도서 전체 조회 view 메소드
