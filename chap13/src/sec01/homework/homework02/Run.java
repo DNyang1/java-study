@@ -1,6 +1,10 @@
 package sec01.homework.homework02;
 
 public class Run {
-	LotteryMenu lm = new LotteryMenu();
+	public static void main(String[] args) {
+		LotteryMenu lm = new LotteryMenu();
+		lm.mainMethod();
+		
+	}
 	
 }
