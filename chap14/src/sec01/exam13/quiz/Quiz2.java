@@ -1,6 +1,5 @@
 package sec01.exam13.quiz;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.Reader;
