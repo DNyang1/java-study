@@ -1,3 +1,4 @@
+-- Active: 1758675041396@@127.0.0.1@3306@jdbc_board
 -- 게시판 프로젝트 데이터베이스 생성
 CREATE DATABASE jdbc_board;
 USE jdbc_board;
@@ -53,7 +54,7 @@ CREATE TABLE comment (
     -- 부모 테이블의 행이 삭제될 때, 해당 행을 참조하는 자식 테이블의 행들도 자동으로 삭제
     -- 예: borad의 특정 게시글이 삭제되면 그 게시글에 달린 comment들도 자동으로 삭제
 );
-
+SELECT * FROM board;
 
 
 
