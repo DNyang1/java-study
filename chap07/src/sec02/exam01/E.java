@@ -1,5 +1,5 @@
 package sec02.exam01;
 
-public class E extends C{
+public class E extends C {
 
 }

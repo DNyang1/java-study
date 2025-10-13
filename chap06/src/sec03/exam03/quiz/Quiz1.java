@@ -14,9 +14,6 @@ public class Quiz1 {
 	public static void main(String[] args) {
 		Computer com1 = new Computer();
 		Computer com2 = new Computer("gram");
-		
-		System.out.println("객체 생성 완료(모델: " + com1.model + ")");
-		System.out.println("객체 생성 완료(모델: " + com2.model + ")");
 	}
 
 }

@@ -14,11 +14,11 @@ public class DateExample {
 		String strNow1 = now.toString();
 		System.out.println(strNow1);
 		System.out.println(now); // 위와 동일
-
+		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일 a hh시 mm분 ss초");
 		String strNow2 = sdf.format(now); // 원하는 날짜 포맷으로 문자열 반환
 		System.out.println(strNow2);
-
+		
 		// 참고
 		// 주요 포맷 문자와 자주 쓰는 패턴
 		// y: 연도(year) -> yyyy: 4자리 연도
@@ -31,23 +31,24 @@ public class DateExample {
 		// m: 분(minute) -> mm: 2자리 분
 		// s: 초(second) -> ss: 2자리 초
 		// S: 밀리초
-
+		
 		// HH는 24시간제, hh는 12시간제(a와 함께 사용해야 오전/오후 구분 가능)
 		// 대소문자를 구분합니다 (MM은 "월", mm은 "분")
-
+		
 		// Quiz
 		// 아래와 같이 출력되도록 날짜 포맷을 지정하세요.
 		// 25년 8월 4일 월요일 14시 5분 8초 137
 		sdf = new SimpleDateFormat("yy년 M월 d일 E요일 H시 m분 s초 S");
 		String strNow3 = sdf.format(now);
 		System.out.println(strNow3);
-
+		
+		
 		// 참고: 자바 8 이후 권장 방식(java.time API)
 		// Date 대신 LocalDate, LocalDateTime, ZonedDateTime 등을 사용 권장
 		// SimpleDateFormat 대신 DateTimeFormatter 사용 권장
 		// 훨씬 더 안전하고 직관적이면 사용성이 좋음
 		// 날짜·시간 조작, 포맷팅, 시간대 처리 모두 훨씬 쉽고 명확함
-
+		
 		// 1. LocalDate
 		// 날짜(년, 월, 일) 정보만 가짐
 		// 시간 정보 없음
@@ -70,9 +71,12 @@ public class DateExample {
 		ZonedDateTime zonedDateTime = ZonedDateTime.now();
 		System.out.println(zonedDateTime);
 		
+		// 참고: 시간 정보만 필요하면 LocalTime
+		
 		// 4. DateTimeFormatter
 		// 날짜/시간 -> 문자열 또는 문자열 -> 날짜/시간 변환에 사용
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yy년 M월 d일 E요일 H시 m분 s초 S");
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy년 MM월 dd일 a HH시 mm분 ss초");
+		System.out.println(dateTime.format(formatter));
 	}
 
 }

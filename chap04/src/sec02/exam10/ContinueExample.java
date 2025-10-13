@@ -1,17 +1,16 @@
 package sec02.exam10;
 
-import java.util.Scanner;
-
 public class ContinueExample {
 
 	public static void main(String[] args) {
 		// 짝수만 출력
 		for (int i = 1; i <= 10; i++) {
-			if(i%2 !=0)
-				continue; // 뭐 더 하지말고 다음 반복으로 건너뛰어라
+			if (i % 2 != 0) {
+				continue; // 다음 반복을 계속해라(건너뜀)
+			}
 			System.out.println(i);
 		}
-	
+		
 		// Quiz
 //		철수는 여자친구 영희에게 생일 축하 메시지를 보내려고 해요. 
 //		그런데 철수의 여자친구 영희는 띄어쓰기를 싫어합니다.
@@ -28,17 +27,8 @@ public class ContinueExample {
 //		[출력]
 //		영희야생일축하해!
 		
-		Scanner sc = new Scanner(System.in);
-		String msg = sc.next();
 		
-		for (int i = 0; i < msg.length(); i++) {
-			if(msg.charAt(i)==' ') {
-				i++;
-				continue;
-			}
-
-			
-			System.out.print(msg.charAt(i));
-		}
+		
 	}
+
 }

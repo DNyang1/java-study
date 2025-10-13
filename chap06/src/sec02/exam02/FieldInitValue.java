@@ -16,3 +16,4 @@ public class FieldInitValue {
 	int[] arrField;
 	String referenceField;
 }
+

@@ -1,33 +1,36 @@
 package homework.homework01;
 
 public class Food extends Product {
-	private int expiration;
-
+	private int expirationDays;
+	
 	public Food() {
 	}
-
+	
 	public Food(String name, int price, int expirationDays) {
 		super(name, price);
-		this.expiration = expirationDays;
-	}
-
-	public int getExpiration() {
-		return expiration;
-	}
-
-	public int calculateDiscountRate() {
-		if(expiration <= 1)
-			return 80;
-		else if (expiration <= 5)
-			return 50;
-		else if (expiration <= 10)
-			return 20;
-		else
-			return 0;
+		this.expirationDays = expirationDays;
 	}
 	
-	public int calcultarePrice() {
-		return (getPrice()-(calculateDiscountRate()/100)*getPrice());
-		
+	public int getExpirationDays() {
+		return expirationDays;
+	}
+	
+	public int calculateDiscountRate() {
+		int discountRate = 0;
+		if (expirationDays <= 1) {
+			discountRate = 80;
+		} else if (expirationDays <= 5) {
+			discountRate = 50;
+		} else if (expirationDays <= 10) {
+			discountRate = 20;
+		}
+		return discountRate;
+	}
+	
+	@Override
+	public int calculatePrice() {
+		int price = super.getPrice(); // super 생략 가능
+		int discountRate = calculateDiscountRate();
+		return price - (price * discountRate / 100);
 	}
 }

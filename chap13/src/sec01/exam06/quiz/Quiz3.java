@@ -3,38 +3,6 @@ package sec01.exam06.quiz;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-class Planet {
-	String name;
-	int diameter;
-	double period;
-	public Planet() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	public Planet(String name, int diameter, double period) {
-		super();
-		this.name = name;
-		this.diameter = diameter;
-		this.period = period;
-	}
-	public String getName() {
-		return name;
-	}
-	public int getDiameter() {
-		return diameter;
-	}
-	public double getPeriod() {
-		return period;
-	}
-	@Override
-	public String toString() {
-		return (name + "(지름: "+ diameter +"km, 공전주기: " + period + "년");
-	}
-	
-}
 
 public class Quiz3 {
 //	Quiz
@@ -77,51 +45,34 @@ public class Quiz3 {
 //	키: Mercury, 값: 수성(지름: 4879km, 공전주기: 0.24년)
 	
 	public static void main(String[] args) {
-		
-		Map<String, Planet> solarSystemMap = new HashMap<String, Planet>();
-		
-		solarSystemMap.put("Mercury", new Planet("수성", 4879, 0.24));
-		solarSystemMap.put("Venus", new Planet("금성", 12104, 0.62));
-		solarSystemMap.put("Earth", new Planet("지구", 12742, 1.0));
-		solarSystemMap.put("Mars", new Planet("화성", 6779, 1.88));
-		
-		Set<String> keySet = solarSystemMap.keySet();
-		System.out.println("*** keySet ***");
-		for (String key : keySet) {
-			Planet pp = new Planet();
-			pp = solarSystemMap.get(key);
-			System.out.println("행성이름: " + key + "(" + pp.name + ")" + "지름: " 
-									+ pp.diameter + "km, 공전주기: " + pp.period+"년");
+		Map<String, Planet> solarSystem = new HashMap<String, Planet>();
+        solarSystem.put("Mercury", new Planet("수성", 4879, 0.24));
+        solarSystem.put("Venus", new Planet("금성", 12104, 0.62));
+        solarSystem.put("Earth", new Planet("지구", 12742, 1.0));
+        solarSystem.put("Mars", new Planet("화성", 6779, 1.88));
+        
+        System.out.println("*** keySet() 사용 ***");
+        Iterator<String> keyIterator = solarSystem.keySet().iterator();
+        while (keyIterator.hasNext()) {
+			String key = keyIterator.next();
+			Planet planet = solarSystem.get(key);
+			System.out.println("행성 이름: " + key + "(" + planet.getName() + ")"
+            		+ ", 지름: " + planet.getDiameter() + "km, 공전주기: " 
+            		+ planet.getPeriod() + "년");
 		}
-		
-		System.out.println();
-		System.out.println("*** entrySet ***");
-
-		Set<Entry<String, Planet>> planetEntrySet = solarSystemMap.entrySet();
-		for (Entry<String, Planet> entry : planetEntrySet) {
-			Planet pp = new Planet();
-			String key = entry.getKey();
-			pp = entry.getValue();
-			System.out.println("키: " + key + ", 값: " + pp);
-
+        System.out.println();
+        
+        System.out.println("*** entrySet() 사용 ***");
+//        Iterator<Map.Entry<String, Planet>> entryIterator = solarSystem.entrySet().iterator();
+        var entryIterator = solarSystem.entrySet().iterator(); // (참고) 지역 변수 타입 추론
+        // 변수의 타입을 컴파일러가 자동으로 추론하도록 해주는 키워드
+        // 남발하면 코드만 보고 타입을 명확히 알 수 없어 오히려 가독성이 떨어짐
+        // 사용 예: 제네릭 타입이 긴 경우
+        
+        while (entryIterator.hasNext()) {
+			Map.Entry<String, Planet> entry = entryIterator.next();
+			System.out.println("키: " + entry.getKey() + ", 값: " + entry.getValue().toString());
 		}
-
-		System.out.println();
-		System.out.println("*** entrySet2 ***");
-		
-		Iterator<Entry<String, Planet>> iterator = planetEntrySet.iterator();
-		
-		while (iterator.hasNext()) {
-			Entry<String, Planet> entry = iterator.next(); 
-			Planet pp = new Planet();
-			String key = entry.getKey();
-			pp = entry.getValue();
-
-			System.out.println("키: " + key + ", 값: " + pp);
-
-		}
-		
-		
 	}
 
 }

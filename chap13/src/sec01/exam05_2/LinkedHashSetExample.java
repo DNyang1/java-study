@@ -7,12 +7,14 @@ import java.util.Set;
 public class LinkedHashSetExample {
 
 	public static void main(String[] args) {
-		// HashSet은 요소를 추가한 순서를 보장하지않음
-		// 빠른 요소 추가, 삭제, 검색
+		// HashSet
+		// 요소를 추가한 순서를 보장하지 않음
+		// 빠르게 요소 추가, 삭제, 검색
 //		Set<String> set = new HashSet<String>();
 		
-		// LinkedHashSet은 요소를 추가한 순서를 보장
-		// 메모리 소요시간 많음
+		// LinkedHashSet
+		// 요소를 추가한 순서대로 저장됨
+		// HashSet에 비해 메모리와 소요 시간이 많음
 		Set<String> set = new LinkedHashSet<String>();
 		
 		set.add("동");
@@ -20,7 +22,6 @@ public class LinkedHashSetExample {
 		set.add("남");
 		set.add("북");
 		System.out.println(set);
-		
-		
 	}
+
 }

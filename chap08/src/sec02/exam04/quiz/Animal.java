@@ -16,9 +16,7 @@ public abstract class Animal {
 	public int getLeg() {
 		return leg;
 	}
-
 	
-	abstract void eat();
-	abstract void sound();
-
+	public abstract void eat();
+	public abstract void sound();
 }

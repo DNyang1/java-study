@@ -3,8 +3,8 @@ package sec01.exam02;
 import java.util.List;
 import java.util.Vector;
 
-// Vector는 거의 사용되지 않음(유지보수성 및 성능 관점에서)
-// 특히 웹 개발에서는 ArrayList, HashMap을 많이 사용
+// Vector는 거의 사용되지 않음
+// List 계열에서는 주로 ArrayList를 많이 사용
 public class VectorExample {
 
 	public static void main(String[] args) {
@@ -21,7 +21,7 @@ public class VectorExample {
 		
 		for (int i = 0; i < list.size(); i++) {
 			Board board = list.get(i);
-			System.out.println(board.getSubject() + '\t' + board.getContent() + "\t" + board.getWriter());
+			System.out.println(board.getSubject() + "\t" + board.getContent() + "\t" + board.getWriter());
 		}
 	}
 

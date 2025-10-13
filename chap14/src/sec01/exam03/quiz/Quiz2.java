@@ -1,6 +1,8 @@
 package sec01.exam03.quiz;
 
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.OutputStream;
 
 public class Quiz2 {
@@ -18,16 +20,18 @@ public class Quiz2 {
 	
 	public static void main(String[] args) {
 		String str = "\n남산위에 저 소나무 철갑을 두른듯"
-		+ "\n바람서리 불변함은 우리기상 일세"
-		+ "\n무궁화 삼천리 화려강산 "
-		+ "\n대한사람 대한으로 길이보전하세";
-		byte[] addStr = str.getBytes();
-		try (OutputStream os = new FileOutputStream("C:/Temp/애국가1.dat",true)){
-			os.write(addStr);
-		} catch (Exception e) {
+					+ "\n바람서리 불변함은 우리기상 일세"
+					+ "\n무궁화 삼천리 화려강산 "
+					+ "\n대한사람 대한으로 길이보전하세";
+		
+		try (OutputStream os = new FileOutputStream("C:/Temp/애국가1.dat", true)) {
+			byte[] bytes = str.getBytes("UTF-8");
+			os.write(bytes);
+			os.flush();
+			System.out.println("파일 저장 완료!");
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
 	}
 
 }

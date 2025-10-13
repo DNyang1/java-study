@@ -1,39 +1,7 @@
 package sec01.exam04.quiz;
 
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
-
-class Song {
-	String name;
-	String singer;
-	public Song() {
-	}
-	public Song(String name, String singer) {
-		this.name = name;
-		this.singer = singer;
-	}
-	@Override
-	public int hashCode() {
-		return Objects.hash(name, singer);
-	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) {
-			return true;
-		}
-		if (!(obj instanceof Song)) {
-			return false;
-		}
-		Song other = (Song) obj;
-		return Objects.equals(name, other.name) && Objects.equals(singer, other.singer);
-	}
-	@Override
-	public String toString() {
-		return "{제목=" + name + ", 가수=" + singer + "}";
-	}
-	
-}
 
 public class Quiz1 {
 //	Quiz
@@ -68,20 +36,18 @@ public class Quiz1 {
 //	[{제목=Whiplash, 가수=에스파}, {제목=HAPPY, 가수=DAY6}]
 	
 	public static void main(String[] args) {
-
-		Set<Song> songSet1 = new HashSet<Song>();
-		Set<Song> songSet2 = new HashSet<Song>();
+		Set<Song> set1 = new HashSet<Song>();
+		set1.add(new Song("APT.", "로제"));
+		set1.add(new Song("Whiplash", "에스파"));
+		set1.add(new Song("POWER", "G-DRAGON"));
 		
-		songSet1.add(new Song("APT." , "로제"));
-		songSet1.add(new Song("Whiplash" , "에스파"));
-		songSet1.add(new Song("POWER" , "G-DRAGON"));
-		songSet2.add(new Song("Whiplash" , "에스파"));
-		songSet2.add(new Song("HAPPY" , "DAY6"));
-		songSet2.add(new Song("HAPPY" , "DAY6"));
+		Set<Song> set2 = new HashSet<Song>();
+		set2.add(new Song("Whiplash", "에스파"));
+		set2.add(new Song("HAPPY", "DAY6"));
+		set2.add(new Song("HAPPY", "DAY6"));
 		
-		System.out.println(songSet1);
-		System.out.println(songSet2);
-		
+		System.out.println(set1);
+		System.out.println(set2);
 	}
 
 }

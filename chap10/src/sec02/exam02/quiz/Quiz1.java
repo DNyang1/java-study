@@ -2,22 +2,6 @@ package sec02.exam02.quiz;
 
 import java.util.Scanner;
 
-class calculator {
-
-	int add(int num1, int num2) {
-		return num1 + num2;
-	}
-
-	int multiple(int num1, int num2) {
-		return num1 * num2;
-	}
-
-	int divide(int num1, int num2) {
-		return num1 / num2;
-	}
-
-}
-
 public class Quiz1 {
 	// Quiz
 //	Calculator 클래스 안에는 두 개의 정수형 숫자를 매개변수로 사용하는 메소드가 3개 있습니다.
@@ -49,26 +33,30 @@ public class Quiz1 {
 //	곱: 0
 //	나누기 중 부적절한 연산이 발생했습니다.
 //	마지막까지 잘 도착했어요!!
-
+	
 	public static void main(String[] args) {
-		calculator calculator = new calculator();
 		Scanner sc = new Scanner(System.in);
-
+		
 		System.out.print("첫번째 숫자: ");
-		int num1 = sc.nextInt();
+		int a = sc.nextInt();
 		System.out.print("두번째 숫자: ");
-		int num2 = sc.nextInt();
-
+		int b = sc.nextInt();
+		
+		// Calculator 클래스의 3개 메소드 실행
+		Calculator calc = new Calculator();
+		System.out.println("합: " + calc.add(a, b));
+		System.out.println("곱: " + calc.multiple(a, b));
+		
 		try {
-			System.out.println("합: " + calculator.add(num1, num2));
-			System.out.println("곱: " + calculator.multiple(num1, num2));
-			System.out.println("나누기: " + calculator.divide(num1, num2));
+			// 예외 발생 가능한 코드
+			System.out.println("나누기: " + calc.divide(a, b));
 		} catch (ArithmeticException e) {
-			System.out.println("나누기 중 이상한거 발생");
+			System.out.println("나누기 중 부적절한 연산이 발생했습니다.");
 		} finally {
-			System.out.println("마지막까지 잘 도착했어요");
+			System.out.println("마지막까지 잘 도착했어요!!");
 		}
-
+		
+		System.out.println("===== 실행 중단 확인용 =====");
 	}
 
 }

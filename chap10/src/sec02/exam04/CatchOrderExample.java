@@ -1,31 +1,36 @@
 package sec02.exam04;
 
 public class CatchOrderExample {
+
 	public static void main(String[] args) {
 		// 2가지 예외가 발생 가능
-		// 하나의 try catch 문으로 합치기
+		// 하나의 try catch문으로 합치기(다중 catch 사용)
+		String data1 = null;
+		String data2 = null;
 		
 		try {
-			String data1 = args[0];
-			String data2 = args[1];
+			data1 = args[0]; // 실행 예외 발생
+			data2 = args[1];
 			
 			int value1 = Integer.parseInt(data1);
 			int value2 = Integer.parseInt(data2); // "a20" 같이 문자가 섞이면 실행 예외 발생
 			int result = value1 + value2;
 			System.out.println(result);
-//		} catch (Exception e) {
-//			System.out.println(" 실행에 문제가 있다 ");
-		} catch (ArrayIndexOutOfBoundsException e) {
-			System.out.println(" 매개 수가 부족함 ");
+		} 
+//		catch (Exception e) {
+//			System.out.println("실행에 문제가 있습니다.");
+//		} 
+		catch (ArrayIndexOutOfBoundsException e) {
+			System.out.println("실행 매개값의 수가 부족합니다.");
 		} catch (NumberFormatException e) {
-			System.out.println(" 숫자로 변환 안됨 ");
+			System.out.println("숫자로 변환할 수 없습니다.");
 		} catch (Exception e) {
-			// 모둔 예와는 얘 안에 들어가기 때문에 마지막에 써주자
-			// Exception 타입을 쓰는 경우? 뭐 안나누고 일단 예외면 잡아야할때(가장많이씀)
-			System.out.println(" 실행에 문제가 잇다 ");
+			// 모든 예외는 Exception을 상속 받음, 다형성에 의해 모든 예외 객체가 대입 가능(제일 마지막에 위치해야 함)
+			// Exception 타입을 쓰는 경우는? 예외와 상관없이 공통적으로 예외 처리를 할 때(일반적으로 많이 씀)
+			System.out.println("실행에 문제가 있습니다.");
 		} finally {
-			System.out.println("다시 실행하쇼");
+			System.out.println("다시 실행하세요.");
 		}
-		
 	}
+
 }

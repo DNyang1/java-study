@@ -1,17 +1,6 @@
 package sec04.exam06.quiz;
 
 import java.util.Scanner;
-class Adder{
-	int add(int n1, int n2) {
-		int result = n1+n2;
-		return result;
-	}
-	
-	double add(double n1, double n2) {
-		double result = n1 + n2;
-		return result;
-	}
-}
 
 public class Quiz1 {
 //	Quiz
@@ -41,5 +30,5 @@ public class Quiz1 {
 		System.out.println(result1);
 		System.out.println(result2);
 	}
-
+	
 }

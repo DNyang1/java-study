@@ -10,7 +10,7 @@ public class SmartTelevisionExample {
 		rc.turnOn();
 		rc.setVolume(10);
 		rc.turnOff();
-		// RemoteControl에 정의된 것만 호출 가능
+		// RemoteControl에 정의된 것만 호출(접근) 가능
 		
 		Searchable searchable = tv;
 		searchable.search("https://www.google.com");

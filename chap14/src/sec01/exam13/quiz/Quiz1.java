@@ -12,13 +12,25 @@ public class Quiz1 {
 //  힌트: 읽은 문자 수만큼 반복하면서 배열에 저장된 문자를 하나씩 출력 
 //       또는 읽은 char 배열을 문자열로 변환 후 출력
 	
-	public static void main(String[] args) throws IOException {
-		Reader reader = new FileReader("C:/Temp/output.txt");
-		
-		char[] buffer = new char[12000];
-		int num = reader.read(buffer); //52395
-		String str = new String(buffer);
-		System.out.println(buffer);
+	public static void main(String[] args) {
+		char[] buffer = new char[100];
+
+        try (Reader reader = new FileReader("C:/Temp/output.txt")) {
+            int readCharNum;
+            while ((readCharNum = reader.read(buffer)) != -1) {
+            	// 방법1: 읽은 문자 수만큼 반복하면서 배열에 저장된 문자를 하나씩 출력
+            	// 문자 하나씩 직접 처리해야 하는 경우 사용
+            	for (int i = 0; i < readCharNum; i++) {
+					System.out.print(buffer[i]);
+				}
+            	
+            	// 방법2: 읽은 char 배열을 문자열로 변환 후 출력
+            	String data = new String(buffer, 0, readCharNum);
+            	System.out.println(data);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 	}
 
 }

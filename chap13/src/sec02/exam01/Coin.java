@@ -1,7 +1,6 @@
 package sec02.exam01;
 
 public class Coin {
-
 	private int value;
 
 	public Coin(int value) {
@@ -11,6 +10,4 @@ public class Coin {
 	public int getValue() {
 		return value;
 	}
- 	
-	
 }

@@ -9,11 +9,16 @@ public class SmartPhone {
 		this.os = os;
 	}
 
-	// 의미있는 정보를 리턴하기 위해 재정의함
+	// 유익한 정보를 리턴하도록 재정의
+	// 보통 필드의 값을 리턴하도록 만듦
+//	@Override
+//	public String toString() {
+//		return company + ", " + os;
+//	}
+	
+	// 일반적으로 자동 생성 기능을 사용
 	@Override
 	public String toString() {
 		return "SmartPhone [company=" + company + ", os=" + os + "]";
 	}
-
-
 }

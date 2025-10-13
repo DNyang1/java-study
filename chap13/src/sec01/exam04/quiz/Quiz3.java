@@ -2,51 +2,7 @@ package sec01.exam04.quiz;
 
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.Objects;
 import java.util.Set;
-
-
-/**
- * 
- */
-/**
- * 
- */
-class Equipment {
-	String name;
-	int pricePerDay;
-	
-	public Equipment() {
-	}
-
-	public Equipment(String name, int pricePerDay) {
-		this.name = name;
-		this.pricePerDay = pricePerDay;
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(name, pricePerDay);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) {
-			return true;
-		}
-		if (!(obj instanceof Equipment)) {
-			return false;
-		}
-		Equipment other = (Equipment) obj;
-		return Objects.equals(name, other.name) && pricePerDay == other.pricePerDay;
-	}
-
-	@Override
-	public String toString() {
-		return "-" + name + ": " + pricePerDay + "원";
-	}
-	
-}
 
 public class Quiz3 {
 //	Quiz
@@ -98,51 +54,44 @@ public class Quiz3 {
 	
 	public static void main(String[] args) {
 		Set<Equipment> storage1 = new HashSet<Equipment>();
-		Set<Equipment> storage2 = new HashSet<Equipment>();
-		
-		Set<Equipment> addStroage = new HashSet<Equipment>();
-		Set<Equipment> retainStroage = new HashSet<Equipment>();
-		Set<Equipment> removeStroage = new HashSet<Equipment>();
-
-		
 		storage1.add(new Equipment("라켓", 15000));
 		storage1.add(new Equipment("배트", 6000));
 		storage1.add(new Equipment("축구공", 3000));
 		
+		Set<Equipment> storage2 = new HashSet<Equipment>();
 		storage2.add(new Equipment("배트", 6000));
 		storage2.add(new Equipment("야구공", 5000));
 		storage2.add(new Equipment("글로브", 9000));
 		
-		addStroage.addAll(storage1);
-		retainStroage.addAll(storage1);
-		removeStroage.addAll(storage1);
-
-		System.out.println("*** 합집합 *** ");
-		addStroage.addAll(storage2);
-		Iterator<Equipment> addIterator = addStroage.iterator();
-		while (addIterator.hasNext()) {
-			Equipment equipment = (Equipment) addIterator.next();
-			System.out.println(equipment);
-			
-		}
-
-		System.out.println("*** 교집합 *** ");
-		retainStroage.retainAll(storage2);
-		Iterator<Equipment> retainIterator = retainStroage.iterator();
-		while (retainIterator.hasNext()) {
-			Equipment equipment = (Equipment) retainIterator.next();
-			System.out.println(equipment);
+		Set<Equipment> union = new HashSet<Equipment>();
+		union.addAll(storage1);
+		union.addAll(storage2);
+		System.out.println("*** 합집합 ***");
+		Iterator<Equipment> iterator = union.iterator();
+		while (iterator.hasNext()) {
+			Equipment equipment = iterator.next();
+			System.out.println("- " + equipment);
 		}
 		
-		System.out.println("*** 차집합 *** ");
-		removeStroage.removeAll(storage2);
-		Iterator<Equipment> removeIterator = removeStroage.iterator();
-		while (removeIterator.hasNext()) {
-			Equipment equipment = (Equipment) removeIterator.next();
-			System.out.println(equipment);
+		Set<Equipment> inter = new HashSet<Equipment>();
+		inter.addAll(storage1);
+		inter.retainAll(storage2);
+		System.out.println("*** 교집합 ***");
+		iterator = inter.iterator();
+		while (iterator.hasNext()) {
+			Equipment equipment = iterator.next();
+			System.out.println("- " + equipment);
 		}
 		
-		
+		Set<Equipment> diff = new HashSet<Equipment>();
+		diff.addAll(storage1);
+		diff.removeAll(storage2);
+		System.out.println("*** 차집합 ***");
+		iterator = diff.iterator();
+		while (iterator.hasNext()) {
+			Equipment equipment = iterator.next();
+			System.out.println("- " + equipment);
+		}
 	}
 
 }

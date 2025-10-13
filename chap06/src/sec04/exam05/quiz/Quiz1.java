@@ -1,17 +1,7 @@
 package sec04.exam05.quiz;
 
 import java.util.Scanner;
-class Calculator{
-	int getEvenTotal(int begin, int end) {
-		int result = 0;
-		for (int i = begin; i <= end; i++) {
-			if (i%2==0) {
-				result += i;
-			}
-		}
-		return result;
-	}
-}
+
 public class Quiz1 {
 //  Quiz
 //	클래스 Calculator에 전달된 begin부터 end까지 정수 중 
@@ -34,4 +24,3 @@ public class Quiz1 {
 	}
 
 }
-

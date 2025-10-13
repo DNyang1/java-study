@@ -1,54 +1,26 @@
 package homework.homework01;
 
-public class Employee extends Person{
-
-	private int salary; // 급여
-	private String dept; // 부서
+public class Employee extends Person {
+	private int salary;
+	private String dept;
 	
 	public Employee() {
-		super();
-		// TODO Auto-generated constructor stub
+
 	}
 
 	public Employee(String name, int age, double height, double weight, int salary, String dept) {
-		super(age, height, weight);
-		this.name = name;
+//		super(name, age, height, weight); // 일반적으로 name 포함해서 상위 생성자에서 처리하는 것이 좋은 방식
+		super(age, height, weight); // 문제의 요구 사항대로 풀면 아래와 같이 1번 방식으로 초기화 권장
+		super.name = name; // 1번 (권장: 의도 명확)
+//		this.name = name; // 2번 (Student 클래스에 name 필드가 있다면 그 필드에 값을 넣게 됨)
 		this.salary = salary;
 		this.dept = dept;
 	}
-	
-	@Override
+
 	public String toString() {
-		return super.toString();
+		String result = super.toString();
+		result += "급여: " + salary + "\n";
+		result += "부서: " + dept + "\n";
+		return result;
 	}
-
-	/**
-	 * @return the salary
-	 */
-	public int getSalary() {
-		return salary;
-	}
-
-	/**
-	 * @param salary the salary to set
-	 */
-	public void setSalary(int salary) {
-		this.salary = salary;
-	}
-
-	/**
-	 * @return the dept
-	 */
-	public String getDept() {
-		return dept;
-	}
-
-	/**
-	 * @param dept the dept to set
-	 */
-	public void setDept(String dept) {
-		this.dept = dept;
-	}
-	
-	
 }

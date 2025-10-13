@@ -16,12 +16,10 @@ public class A {
 		method1();
 		method2();
 		method3();
-		
 	}
 	
-	// 메서드
+	// 메소드
 	public void method1() {}
 	void method2() {}
 	private void method3() {}
-	
 }

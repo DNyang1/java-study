@@ -1,25 +1,7 @@
 package sec04.exam05.quiz;
 
 import java.util.Scanner;
-class Rectangle{
-	// 필드
-	int width;
-	int height;
-	
-	//메서드
-	
-	int area() {
-		int result = width*height;
-		System.out.println("면적: " + result);
-		return 0;
-	}
-	
-	int length(){
-		int result = (width+height)*2;
-		System.out.println("둘레: " + result);
-		return 0;
-	}
-}
+
 public class Quiz2 {
 //	Quiz
 //	실행 클래스는 화면에서 직사각형의 가로와 세로를 입력받아 
@@ -28,7 +10,8 @@ public class Quiz2 {
 //
 //	Rectangle 클래스의 멤버는 다음과 같습니다.
 //	[필드]
-//	가로(width): 정수, 세로(height): 정수
+//	가로(width): 정수
+//	세로(height): 정수
 //	
 //	[메소드]
 //	area(): 직사각형의 넓이를 출력
@@ -52,5 +35,5 @@ public class Quiz2 {
 		rect.area();
 		rect.length();
 	}
-	
+
 }

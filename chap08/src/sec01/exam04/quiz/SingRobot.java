@@ -4,8 +4,7 @@ public class SingRobot implements Actionable {
 
 	@Override
 	public void action() {
-		System.out.println("SingRobot 은 노래를 부릅니다");
-		
+		System.out.println("SingRobot은 노래를 부릅니다");
 	}
 
 }

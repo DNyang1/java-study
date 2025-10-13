@@ -7,16 +7,16 @@ public class CalculatorExample {
 		myCalc.powerOn();
 		
 		int result1 = myCalc.plus(5, 6);
-		System.out.println("result: " + result1);
+		System.out.println("result1: " + result1);
 		
 		byte x = 10;
 		byte y = 4;
-		double result2 = myCalc.divide(x, y); // byte 가 int로 자동 타입 변환됨.
+		double result2 = myCalc.divide(x, y); // byte -> int로 자동 타입 변환
 		System.out.println("result2: " + result2);
 		
 //		double result = myCalc.divide(10.5, 20.0); // 잘못된 매개값 사용
 		
 		myCalc.powerOff();
-		
 	}
+
 }

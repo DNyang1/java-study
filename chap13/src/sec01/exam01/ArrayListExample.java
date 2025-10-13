@@ -11,25 +11,24 @@ public class ArrayListExample {
 		// 순서를 유지하며 중복 요소를 허용
 		
 		// 인터페이스 타입을 사용하는 이유? 다형성 사용
-		// List 인터페이스의 다른 구현 클래스를 사용하게 되더라도
+		// List 인터페이스의 다른 구현 클래스를 사용하더라도 
 		// 코드를 수정하지 않고 새로운 기능을 추가할 수 있음
 		
-		// 제네릭: 자바에서 클래스나 메소드가 사용할 타입을 
+		// 제네릭: 자바에서 클래스나 메소드가 사용할 타입을
 		// 외부에서 파라미터처럼 받아서 사용할 수 있게 해주는 문법
 		// 타입 파라미터: 제네릭을 사용할 때 전달하는 타입
 		
 //		List list = new ArrayList(); // 제네릭을 생략하면 Object로 간주(권장 안함)
 //		List<String> list = new ArrayList<String>();
-		List<String> list = new ArrayList<>(); // 생략하면 왼쪽 List에 지정된 타입을 따라 감(타입 추론)
+		List<String> list = new ArrayList<>(); // 생략하면 왼쪽에 지정된 타입을 따라 감(타입 추론)
 		
 		// 객체 추가
 //		list.add(true); // 제네릭 타입으로 명시된 타입의 데이터만 추가 가능
-		list.add("Java"); // 비어있는 마지막 index에 객체를 저장
+		list.add("Java"); // 비어있는 마지막 index에 객체를 저장 
 		list.add("JDBC");
 		list.add("Servlet/JSP");
-		list.add(2, "Database"); // 2번 index에 "Database" 객체를 저장(뒤로 하나씩 밀려남)
+		list.add(2, "Database"); // 2번 인덱스에 저장(하나씩 밀려남)
 		list.add("iBATIS");
-//		list.add(7, "TEST"); // IndexOutOfBoundsException 발생
 		
 		// 저장된 총 객체 수 얻기
 		int size = list.size();
@@ -43,7 +42,6 @@ public class ArrayListExample {
 		
 		// 리스트 출력하기
 		System.out.println(list); // 재정의된 toString()
-		System.out.println();
 		
 		// 객체 수정
 		// 주어진 인덱스에 저장된 객체를 주어진 객체로 바꿈
@@ -63,25 +61,26 @@ public class ArrayListExample {
 		list.remove(2);
 		list.remove("MyBatis");
 		
-		// 향상된 for 문으로 모든 객체 하나씩 가져오기
-		for (String string : list) {
-			System.out.println(string);
+		// 향상된 for 문으로 모든 객체를 하나씩 가져오기
+		for (String str : list) {
+			System.out.println(str);
 		}
+		System.out.println();
 		
 		// 객체 검색
-		if (!list.isEmpty()) { // 비어있는지 조사
+		if (!list.isEmpty()) { // 컬렉션이 비어있는지 조사
 			// 주어진 객체가 저장되어 있는지 조사
-			System.out.println("JDBC? " + list.contains("JDBC"));
-			System.out.println("어디에? " + list.indexOf("JDBC"));
-			System.out.println("Database? " + list.contains("Database"));
-			System.out.println("어디에? " + list.indexOf("Database"));
+			System.out.println("JDBC 있니? " + list.contains("JDBC"));
+			System.out.println("어디에 있니? " + list.indexOf("JDBC"));
+			System.out.println("Database 있니? " + list.contains("Database"));
+			System.out.println("어디에 있니? " + list.indexOf("Database"));
 		}
 		System.out.println();
 		
 		// 저장된 모든 객체 삭제
 		list.clear();
 		System.out.println(list.isEmpty());
-		System.out.println("총 객체수 " + list.size());
+		System.out.println("총 객체수: " + list.size());
 		System.out.println();
 		
 		// 요소 정렬
@@ -97,8 +96,8 @@ public class ArrayListExample {
 		Collections.sort(strList);
 		System.out.println(strList);
 		
-		// 내림
-		// Comparator : 정렬기준 제공
+		// 내림차순
+		// Comparator: 정렬 기준 제공
 		Collections.sort(strList, Collections.reverseOrder());
 		System.out.println(strList);
 		
@@ -117,13 +116,9 @@ public class ArrayListExample {
 		System.out.println(numList);
 		
 		// 내림차순
+		// Comparator: 정렬 기준 제공
 		Collections.sort(numList, Collections.reverseOrder());
 		System.out.println(numList);
-		
-		
-		
-		
-		
 	}
 
 }

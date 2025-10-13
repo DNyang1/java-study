@@ -1,16 +1,15 @@
 package sec02.exam07;
 
 public class FloatDoubleExample {
-	
+
 	public static void main(String[] args) {
 		// float(4byte), double(8byte)
-		// 부동 소수점 방식으로 저장
-		// => 같은 크기를 갖는 int(4byte) 혹은 long(8byte)
-		//  보다 더 큰 수를 저장 가능
-		// byte < short < int < long < float < double
+		// 부동소수점 방식으로 저장 
+		// => 같은 크기를 갖는 int(4byte), long(8byte) 보다 더 큰 수를 저장할 수 있음
 		
-//		float var1 = 3.14; // 기볹적으로 컴파일러는 double 로 인식하기에,
-						   // 얘는 float에 들어갈수 있는 작은 애다 하고 F 혹은 f를 붙여줘야
+//		float var1 = 3.14; // 자바 컴파일러는 실수 리터럴을 기본적으로 double 타입으로 해석
+		// double 타입을 float 타입에 바로 넣을 수 없음
+		// F 또는 f 를 붙여 float 타입임을 알려줌
 		float var2 = 3.14f;
 		double var3 = 3.14;
 		
@@ -26,14 +25,13 @@ public class FloatDoubleExample {
 		
 		// e 사용하기
 		double var6 = 3e6; // 3.0 * 10^6
-//		int var = 3e6; // E 또는 e가 있으면  => 실수 리터럴 (?)
-		float var7 = 3e6f;
+//		int var = 3e6; // E 또는 e가 포함되어 있을 경우 => 실수 리터럴
+		float var7 = 3e6F;
 		double var8 = 2e-3; // 2.0 * 10^-3
 		
 		System.out.println(var6);
 		System.out.println(var7);
 		System.out.println(var8);
-		
 	}
 
 }

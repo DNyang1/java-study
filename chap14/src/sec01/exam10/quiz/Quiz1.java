@@ -12,18 +12,19 @@ public class Quiz1 {
 //	String[] lines = {"첫 번째 줄입니다.", "두 번째 줄입니다.", "세 번째 줄입니다."};
 
 //  힌트: 줄바꿈하는 방법 "\r\n" 또는 "\n"
-
+	
 	public static void main(String[] args) {
+		String[] lines = {"첫 번째 줄입니다.", "두 번째 줄입니다.", "세 번째 줄입니다."};
+		
 		try (Writer writer = new FileWriter("C:/Temp/output.txt")) {
-			String[] lines = { "첫 번째 줄", "두 번쨰 줄", "세 번쨰 줄" };
-			
-			for (int i = 0; i < lines.length; i++)
-				writer.write(lines[i] + "\n");
-			
+			for (String line : lines) {
+				writer.write(line + "\n");
+			}
+			writer.flush();
+			System.out.println("파일 저장 완료!");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 }

@@ -1,6 +1,5 @@
 package sec01.quiz;
 
-import java.util.Iterator;
 import java.util.Scanner;
 
 public class Quiz1 {
@@ -19,21 +18,32 @@ public class Quiz1 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		
-		System.out.println("입력");
-		String str = sc.nextLine();
-		
-		int sum = 0;
-		
-		for (char ch : str.toCharArray()) {
-			if (ch >= '0' && ch <= '9')
-				sum += (ch - '0');
+        
+        System.out.print("문자열 입력: ");
+        String input = sc.nextLine();
+        
+        int sum = 0;
+        for (int i = 0; i < input.length(); i++) {
+			char ch = input.charAt(i);
+			
+			// 숫자인지 직접 체크: '0'~'9' 사이인지 확인
+			if (ch >= '0' && ch <= '9') {
+				int digit = ch - '0';
+				sum += digit;
+			}
 		}
-		System.out.println(sum);
-		
-		
+        System.out.println("합계: " + sum);
+        
+        // 자바에서 제공하는 메소드를 사용한 방법
+        int sum2 = 0;
+        // 문자열을 char 배열로 변환하는 메소드
+        for (char ch : input.toCharArray()) {
+        	// 문자가 숫자인지 판별하는 메소드
+        	if (Character.isDigit(ch)) {
+        		sum2 += Character.getNumericValue(ch); // 문자를 정수로 변환하는 메소드
+        	}
+		}
+        System.out.println("합계: " + sum2);
 	}
 
-	
-	
 }

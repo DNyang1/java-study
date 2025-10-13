@@ -1,45 +1,7 @@
 package sec01.exam04.quiz;
 
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
-
-class Food {
-	String name;
-	int price;
-	
-	public Food() {
-	}
-
-	public Food(String name, int price) {
-		super();
-		this.name = name;
-		this.price = price;
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(name, price);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) {
-			return true;
-		}
-		if (!(obj instanceof Food)) {
-			return false;
-		}
-		Food other = (Food) obj;
-		return Objects.equals(name, other.name) && price == other.price;
-	}
-
-	@Override
-	public String toString() {
-		return "" + name + ":" + price + "";
-	}
-	
-}
 
 public class Quiz2 {
 //	Quiz
@@ -72,20 +34,18 @@ public class Quiz2 {
 //	전체 주문 취소: []
 	
 	public static void main(String[] args) {
-
-		Set<Food> foodSet = new HashSet<Food>();
+		Set<Food> foods = new HashSet<Food>();
 		
-		foodSet.add(new Food("샐러드", 14000));
-		foodSet.add(new Food("치킨", 23000));
-		foodSet.add(new Food("치킨", 50000));
-		System.out.println(foodSet);
-		foodSet.remove(new Food("치킨", 50000));
-		System.out.println("5만원 치킨 취소 : " + foodSet);
-		foodSet.removeAll(foodSet);
-		System.out.println("전체 주문 취소 : " + foodSet);
+		foods.add(new Food("샐러드", 14000));
+		foods.add(new Food("치킨", 23000));
+		foods.add(new Food("치킨", 50000));
+		System.out.println(foods);
 		
+		foods.remove(new Food("치킨", 50000));
+		System.out.println("5만원 치킨 취소: " + foods);
 		
-		
+		foods.clear();
+		System.out.println("전체 주문 취소: " + foods);
 	}
 
 }

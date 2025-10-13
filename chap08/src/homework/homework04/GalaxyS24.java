@@ -1,4 +1,3 @@
-
 package homework.homework04;
 
 public class GalaxyS24 extends SmartPhone {

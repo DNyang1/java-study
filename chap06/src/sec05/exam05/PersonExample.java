@@ -10,9 +10,9 @@ public class PersonExample {
 		System.out.println(p1.name);
 		
 //		p1.nation = "usa";
-//		p1.ssn = "123123-1231233";
+//		p1.ssn = "654321-7654321";
 		p1.name = "홍삼원";
 		System.out.println(p1.name);
-		
 	}
+
 }

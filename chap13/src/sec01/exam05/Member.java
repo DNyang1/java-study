@@ -1,34 +1,29 @@
 package sec01.exam05;
 
-import java.util.LinkedHashSet;
 import java.util.Objects;
-import java.util.Set;
 
-
-public class Member implements Comparable<Member>{
+public class Member implements Comparable<Member> {
 	private String name;
 	private int age;
-	public Member() {
-	}
+	
 	public Member(String name, int age) {
-		super();
 		this.name = name;
 		this.age = age;
 	}
-	@Override
-	public String toString() {
-		return  name +"  " + age;
-	}
+
 	public String getName() {
 		return name;
 	}
+
 	public int getAge() {
 		return age;
 	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(age, name);
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -40,9 +35,18 @@ public class Member implements Comparable<Member>{
 		Member other = (Member) obj;
 		return age == other.age && Objects.equals(name, other.name);
 	}
-	public int compareTo(Member o) {
-		return age - o.age;
-	}
-	
 
+	@Override
+	public String toString() {
+		return "Member [name=" + name + ", age=" + age + "]";
+	}
+
+	@Override
+	public int compareTo(Member other) {
+//		return age - other.age;
+		
+		if (age < other.age) return -1;
+		else if (age > other.age) return 1;
+		else return 0;
+	}
 }
